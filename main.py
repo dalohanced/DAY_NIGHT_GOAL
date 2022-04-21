@@ -3,7 +3,6 @@ import time
 from telebot import types
 bot = telebot.TeleBot(open("key12.txt").readline())
 
-
 murkup=types.ReplyKeyboardMarkup(resize_keyboard=True)
 
 item1=types.KeyboardButton("/1")
@@ -20,13 +19,13 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 
-
 @bot.message_handler(commands=['1'])
 def bred(message):
 
     bot.send_message(message.chat.id,"Твоя цель на сегодня:",reply_markup=murkup)
-    time.sleep(100)
+
     txt = message.text
+
     a=txt
 
     bot.send_message(message.chat.id,a)
